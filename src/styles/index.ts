@@ -17,7 +17,7 @@ export const Layout = {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   `,
   spacePadding: css`
     padding: 1vh 2vw;
