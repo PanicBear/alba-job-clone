@@ -2,7 +2,6 @@ import { MouseEventHandler } from 'react';
 
 export type SVGIconProps = {
   fill?: string;
-  onClick?: MouseEventHandler<SVGElement>;
 };
 
 export { default as BackIcon } from './Back';

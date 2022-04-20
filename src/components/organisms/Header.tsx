@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../styles';
 import { Icon } from '../atoms';
+import Button from '../atoms/Button';
 
 const HeaderWrapper = styled.header`
   ${Layout.flexRowBetween}
@@ -22,9 +23,9 @@ const onMenuClick: (e: React.MouseEvent) => void = (e) => {
 
 const Header: (props: any) => JSX.Element = (props) => (
   <HeaderWrapper>
-    <Icon.MenuIcon onClick={onMenuClick} />
+    <Button onClick={() => console.log('header-button')} innerHTML={<Icon.MenuIcon onClick={onMenuClick} />} />
     <Text>Lahatjob</Text>
-    <Icon.LoginIcon />
+    <Button onClick={() => console.log('header-button')} innerHTML={<Icon.LoginIcon />} />
   </HeaderWrapper>
 );
 

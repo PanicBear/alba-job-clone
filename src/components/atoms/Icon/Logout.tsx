@@ -1,10 +1,9 @@
 import React, { memo } from 'react';
 import { SVGIconProps } from '.';
 
-const LogoutIcon: (props: SVGIconProps) => JSX.Element = ({ fill = 'none', onClick = () => {} }) => (
+const LogoutIcon: (props: SVGIconProps) => JSX.Element = ({ fill = 'none' }) => (
   <svg
     fill={fill}
-    onClick={onClick}
     xmlns="http://www.w3.org/2000/svg"
     className="h-6 w-6"
     viewBox="0 0 24 24"
