@@ -1,17 +1,17 @@
 import React, { HTMLInputTypeAttribute } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import styled from 'styled-components';
-import { Color } from '../../styles';
+import { Color, StyleAttr } from '../../styles';
 
 const InputWithStyle = styled.input`
+  ${StyleAttr.borderRadius}
   flex: 1;
-  height: 24px;
+  height: 3vh;
   width: max-content;
-  font-size: 16px;
+  font-size: 2vh;
   background-color: ${Color.GRAY01};
-  margin-right: 8px;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 0.5vh 1vw;
+  border: 0;
   box-sizing: content-box;
 `;
 
@@ -19,11 +19,12 @@ interface InputProps {
   type?: HTMLInputTypeAttribute;
   placeholder: string;
   register: UseFormRegisterReturn;
+  style: React.CSSProperties;
   [attrs: string]: any;
 }
 
-const Input: (props: InputProps) => JSX.Element = ({ type = 'text', placeholder, register, ...attrs }) => {
-  return <InputWithStyle type={type} placeholder={placeholder} {...register} {...attrs} />;
+const Input: (props: InputProps) => JSX.Element = ({ type = 'text', placeholder, register, style = {}, ...attrs }) => {
+  return <InputWithStyle type={type} placeholder={placeholder} style={style} {...register} {...attrs} />;
 };
 
 export default Input;

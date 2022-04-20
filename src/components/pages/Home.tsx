@@ -1,12 +1,15 @@
 import React from 'react';
-import Search from '../molecules/Search';
-import Header from '../organisms/Header';
+import { AdBanner } from '../atoms';
+import { Navbar, Search } from '../molecules';
+import { Header } from '../organisms';
 
 const Home: (props: any) => JSX.Element = (props) => {
   return (
     <>
       <Header />
       <Search />
+      <Navbar />
+      <AdBanner />
     </>
   );
 };

@@ -4,7 +4,7 @@ import { Home } from './components/pages';
 
 function App() {
   return (
-    <div className="w-full max-w-xl mx-auto">
+    <div className="App">
       <Home />
     </div>
   );
