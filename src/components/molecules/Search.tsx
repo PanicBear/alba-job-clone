@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import Button from '../atoms/Button';
-import { SearchIcon } from '../atoms/Icon';
-import Input from '../atoms/Input';
+import { Layout } from '../../styles';
+import { Button, FormErrorMessage, Icon, Input } from '../atoms';
 
-const FormWithStyle = styled.form`
-  display: flex;
-  justify-content: space-between;
+const FormWrapper = styled.div`
   margin-top: 16px;
   padding: 0 16px;
 `;
+const FormWithStyle = styled.form`
+  ${Layout.flexRowBetween}
+`;
+
+interface SearchForm {
+  searchText: string;
+}
 
 const Search: (props: any) => JSX.Element = (props) => {
-  const onButtonClick: (e: React.MouseEvent) => void = (e) => {
-    console.log('search');
+  const { register, handleSubmit, formState } = useForm<SearchForm>();
+
+  const onValid = (formData: SearchForm) => {
+    console.log(formData);
   };
+
+  useEffect(() => {
+    console.log(formState.errors);
+  }, [formState]);
+
   return (
-    <FormWithStyle>
-      <Input placeholder="Enter keyword to search" />
-      <Button onClick={onButtonClick} innerHTML={<SearchIcon />} />
-    </FormWithStyle>
+    <FormWrapper>
+      <FormWithStyle onSubmit={handleSubmit(onValid)}>
+        <Input
+          register={register('searchText', { required: 'Keyword for search is required' })}
+          placeholder="Enter keyword to search"
+        />
+        <Button innerHTML={<Icon.SearchIcon />} />
+      </FormWithStyle>
+      <FormErrorMessage errorMessage={formState.errors.searchText?.message} />
+    </FormWrapper>
   );
 };
 

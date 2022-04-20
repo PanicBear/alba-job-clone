@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { Color } from '../../styles';
 
 interface ButtonProps {
-  onClick: (e: React.MouseEvent) => void;
   innerHTML: string | JSX.Element;
+  [key: string]: any;
 }
 
 const ButtonWithStyle = styled.button`
   cursor: pointer;
 `;
 
-const Button: (props: ButtonProps) => JSX.Element = ({ onClick, innerHTML }) => {
-  return <ButtonWithStyle onClick={onClick}>{innerHTML}</ButtonWithStyle>;
+const Button: (props: ButtonProps) => JSX.Element = ({ innerHTML, ...attrs }) => {
+  return <ButtonWithStyle {...attrs}>{innerHTML}</ButtonWithStyle>;
 };
 
 export default Button;

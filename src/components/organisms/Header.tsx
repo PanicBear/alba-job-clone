@@ -23,7 +23,7 @@ const onMenuClick: (e: React.MouseEvent) => void = (e) => {
 
 const Header: (props: any) => JSX.Element = (props) => (
   <HeaderWrapper>
-    <Button onClick={() => console.log('header-button')} innerHTML={<Icon.MenuIcon onClick={onMenuClick} />} />
+    <Button onClick={() => console.log('header-button')} innerHTML={<Icon.MenuIcon />} />
     <Text>Lahatjob</Text>
     <Button onClick={() => console.log('header-button')} innerHTML={<Icon.LoginIcon />} />
   </HeaderWrapper>
