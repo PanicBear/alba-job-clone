@@ -48,9 +48,6 @@
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/styled-components": "^5.1.25",
-    "autoprefixer": "^10.4.4",
-    "husky": "^7.0.4",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24"
+    "husky": "^7.0.4"
   }
 }
